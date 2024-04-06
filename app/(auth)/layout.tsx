@@ -4,11 +4,8 @@ const AuthLayout = ({
     children: React.ReactNode;
 }) => {
     return ( 
-    <div className="flex flex-col gap-y-4">
-        <nav className="p-1 bg-red-500 w-full">
-            Auth Navbar
-
-        </nav>
+    <div className="h-full flex items-center justify-center">
+    
         {children}
 
     </div> );
