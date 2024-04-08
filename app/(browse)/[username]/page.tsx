@@ -1,0 +1,18 @@
+interface UserPageProps {
+    params: {
+      username: string;
+    };
+  };
+
+const UserPage = async ({
+    params
+}: UserPageProps) => {
+    
+    return ( 
+      <div>
+        User: {params.username} 
+      </div>
+    );
+  }
+
+export default UserPage;
