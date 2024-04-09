@@ -14,6 +14,8 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+
 }
 
 model User {
@@ -46,13 +48,16 @@ model Stream {
   isChatDelayed     Boolean     @default(false)
   isChatFollowersOnly Boolean   @default(false)
 
-  user              User?       @relation(fields: [userId], references: [id])
+  user              User?       @relation(fields: [userId], references: [id],onDelete: Cascade)
   userId            String?     @unique
 
   createdAt         DateTime    @default(now())
   updatedAt         DateTime    @updatedAt
 
+
   @@index([ingressId])
+  
+  @@fulltext([name])
 }
 
 model Follow {
