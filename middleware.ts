@@ -4,7 +4,8 @@ export default authMiddleware({
   publicRoutes: [
     "/",
     "/api/webhooks(.*)",
-  "/api/uploadthing",], // Add the route to your API end
+    "/api/uploadthing",
+    "/:username"], 
 });
 
 export const config = {
