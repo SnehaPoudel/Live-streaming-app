@@ -14,7 +14,7 @@ interface ResultCardProps {
     thumbnailUrl: string | null;
     isLive: boolean;
     updatedAt: Date;
-    user: User | null; // Assuming User is the type of the user object
+    user: User | null; 
   };
 }
 
