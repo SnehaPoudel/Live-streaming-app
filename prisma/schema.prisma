@@ -41,7 +41,7 @@ model Stream {
   id                String      @id @default(auto()) @map("_id") @db.ObjectId
   name              String
   thumbnailUrl      String?
-  ingressId         String?     
+  ingressId         String?     @unique    
   serverUrl         String?
   streamKey         String?
   isLive            Boolean     @default(false)
@@ -55,8 +55,6 @@ model Stream {
   createdAt         DateTime    @default(now())
   updatedAt         DateTime    @updatedAt
 
-
-  @@index([ingressId])
   @@fulltext([name])
 }
 
